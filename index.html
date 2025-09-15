@@ -16,7 +16,8 @@
         -webkit-tap-highlight-color: transparent;
       }
 
-      html, body {
+      html,
+      body {
         height: 100%;
         overflow-y: auto;
       }
@@ -413,6 +414,17 @@
         "#ff4757",
         "#fff0f6",
       ];
+
+      document.addEventListener("gesturestart", (e) => e.preventDefault());
+      document.addEventListener(
+        "touchmove",
+        (e) => {
+          if (e.scale !== 1) {
+            e.preventDefault(); 
+          }
+        },
+        { passive: false }
+      );
 
       // Ajusta o tamanho do canvas
       function ajustarCanvas() {
