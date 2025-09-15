@@ -16,6 +16,11 @@
         -webkit-tap-highlight-color: transparent;
       }
 
+      html, body{
+          height: 100%;
+          overflow-y: auto;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Oxygen, Ubuntu, sans-serif;
@@ -43,6 +48,9 @@
         max-width: 500px;
         width: 100%;
         border: 2px solid #ffb6c1;
+        max-height: 90vh;
+         -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
       }
 
       h1 {
