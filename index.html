@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="icon" type="image/png" href="love-letter.png">
+    <link rel="icon" type="image/png" href="love-letter.png" />
     <title>CineCay</title>
     <style>
       * {
@@ -16,9 +16,9 @@
         -webkit-tap-highlight-color: transparent;
       }
 
-      html, body{
-          height: 100%;
-          overflow-y: auto;
+      html, body {
+        height: 100%;
+        overflow-y: auto;
       }
 
       body {
@@ -37,7 +37,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
       }
 
       .app-container {
@@ -48,9 +47,7 @@
         max-width: 500px;
         width: 100%;
         border: 2px solid #ffb6c1;
-        max-height: 90vh;
-         -webkit-overflow-scrolling: touch;
-        overflow-y: auto;
+        margin: 20px 0;
       }
 
       h1 {
@@ -336,7 +333,7 @@
           max-height: 60px;
         }
       }
-          
+
       .icone {
         width: 24px;
         height: 24px;
@@ -616,11 +613,9 @@
           .slice(0, 5)
           .map(
             (item, i) =>
-              `<li>${
-                i === 0
-                  ? '<img src="trophy.png">'
-                  : `${i + 1}º`
-              } ${item.nome} - ${item.horario}</li>`
+              `<li>${i === 0 ? '<img src="trophy.png">' : `${i + 1}º`} ${
+                item.nome
+              } - ${item.horario}</li>`
           )
           .join("");
       }
