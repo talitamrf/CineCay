@@ -108,7 +108,7 @@ let movies = [
   {
     title: "O Homem nas Trevas 2",
     year: 2021,
-    watched: false,
+    watched: true,
     chooser: "Cami",
     date: "22/09/2025",
   },
