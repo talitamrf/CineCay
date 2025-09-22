@@ -117,7 +117,7 @@ let movies = [
     year: 2015,
     watched: false,
     chooser: "Isa",
-    date: "?",
+    date: "26/09/2025",
   },
 ];
 
