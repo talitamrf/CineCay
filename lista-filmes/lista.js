@@ -112,13 +112,6 @@ let movies = [
     chooser: "Cami",
     date: "22/09/2025",
   },
-  {
-    title: "Descendentes",
-    year: 2015,
-    watched: false,
-    chooser: "Isa",
-    date: "26/09/2025",
-  },
 ];
 
 let editingIndex = -1;
