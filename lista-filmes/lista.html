@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Filmes</title>
+    <link rel="stylesheet" href="lista.css">
+    <link rel="icon" type="image/png" href="imgs/love-letter.png" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍿 CineCay 🍓</h1>
+            <p>Gerencie sua lista de filmes de forma simples e divertida!</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number" id="totalMovies">0</div>
+                    <div class="label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="watchedMovies">0</div>
+                    <div class="label">Assistidos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="pendingMovies">0</div>
+                    <div class="label">Pendentes</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">➕ Adicionar</button>
+                <button class="btn btn-secondary" onclick="exportData()">📥 Exportar</button>
+                <button class="btn btn-secondary" onclick="importData()">📤 Importar</button>
+            </div>
+            
+            <input type="text" class="search-bar" id="searchBar" placeholder="🔍 Buscar filme..." onkeyup="filterMovies()">
+            
+            <div class="filter-group">
+                <label>Filtrar:</label>
+                <select id="statusFilter" onchange="filterMovies()">
+                    <option value="all">Todos</option>
+                    <option value="watched">Assistidos</option>
+                    <option value="not-watched">Não Assistidos</option>
+                </select>
+                
+                <select id="chooserFilter" onchange="filterMovies()">
+                    <option value="all">Todos</option>
+                    <option value="Cay">Cay</option>
+                    <option value="Kan">Kan</option>
+                    <option value="Bingus">Bingus</option>
+                    <option value="Batata">Batata</option>
+                    <option value="Blaz">Blaz</option>
+                    <option value="Selene">Selene</option>
+                    <option value="Mary">Mary</option>
+                    <option value="Cami">Cami</option>
+                    <option value="Isa">Isa</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table id="moviesTable">
+                <thead>
+                    <tr>
+                        <th>Filme</th>
+                        <th>Ano</th>
+                        <th>Status</th>
+                        <th>Escolhido</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="moviesBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Adicionar Filme</h2>
+            </div>
+            
+            <form id="movieForm">
+                <div class="form-group">
+                    <label for="movieTitle">Título do Filme*</label>
+                    <input type="text" id="movieTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="movieYear">Ano de Lançamento</label>
+                    <input type="number" id="movieYear" min="1900" max="2030">
+                </div>
+                
+                <div class="form-group">
+                    <label for="movieStatus">Status*</label>
+                    <select id="movieStatus" required>
+                        <option value="watched">Assistido ✅</option>
+                        <option value="not-watched">Não Assistido ❌</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="movieChooser">Escolhido por</label>
+                    <input type="text" id="movieChooser" placeholder="Ex: Cay, Kan, Bingus...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="movieDate">Data de Exibição</label>
+                    <input type="date" id="movieDate">
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <input type="file" id="fileInput" style="display: none;" accept=".json">
+    <script src="lista.js"></script>
+</body>
+</html>
